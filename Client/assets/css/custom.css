@@ -42,6 +42,7 @@ header .header-content {
     padding: 100px 15px 70px;
     text-align: center;
     color: #303030 ;
+    max-height: 50%
 }
 
 header .header-content .header-content-inner h1 {
@@ -157,9 +158,31 @@ header .header-content .header-content-inner p {
 	background: url('../images/pencil_sharpener.jpg');
 	}
 
+.item-1-fade{
+    background: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95)), url('../images/writing.jpg');
+}
+
+.item-2-fade{
+    background: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95)), url('../images/concert.jpg');
+}
+
+.item-3-fade{
+    background: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95)), url('../images/pencil_sharpener.jpg');
+}
+
+.item-1-fade,
+.item-2-fade,
+.item-3-fade {
+    margin: auto auto 100px auto;
+    height: 400px;
+    background-size: cover;
+    background-position: 50% 50%;
+    }
+
 .item-1,
 .item-2,
 .item-3 {
+
 	background-size: cover;
 	background-position: 50% 50%;
 	}
