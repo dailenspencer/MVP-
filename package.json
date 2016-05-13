@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/scottgago/MVP-/issues"
   },
-  "homepage": "https://github.com/scottgago/MVP-"
+  "homepage": "https://github.com/scottgago/MVP-",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "nba": "^2.0.1"
+  }
 }

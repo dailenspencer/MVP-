@@ -1,4 +1,8 @@
-angular.module("heatingUp",['ngRoute'])
+angular.module("heatingUp",
+  ['ngRoute',
+  'heatingUp.byConf',
+  'heatingUp.byTeam',
+  'heatingUp.byPlayer'])
 .config(function($routeProvider){
   $routeProvider
     .when('/',{
@@ -8,13 +12,16 @@ angular.module("heatingUp",['ngRoute'])
       templateUrl: 'app/login/login.html'
     })
     .when('/byPlayer',{
-      templateUrl: 'app/byPlayer/byPlayer.html'
+      templateUrl: 'app/byPlayer/byPlayer.html',
+      controller: 'byPlayer'
     })
     .when('/byTeam',{
-    	templateUrl: 'app/byTeam/byTeam.html'
+    	templateUrl: 'app/byTeam/byTeam.html',
+      controller: 'byTeam'
     })
     .when('/byConference',{
-    	templateUrl: 'app/byConference/byConference.html'
+    	templateUrl: 'app/byConference/byConference.html',
+      controller: 'byConf'
     }).
     otherwise({
     	templateUrl: 'app/login/login.html'
