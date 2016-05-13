@@ -52,10 +52,10 @@ header .header-content .header-content-inner h1 {
 }
 
 header .header-content .header-content-inner p {
-    margin-bottom: 50px;
-    font-size: 16px;
-    font-weight: 300;
-    color: rgba(255,255,255,.7);
+    margin-top: 20px;
+    font-size: 29px;
+    font-weight: 500;
+    color: #000;
 }
 
 @media(min-width:768px) {
@@ -429,3 +429,14 @@ img::-moz-selection {
 .bg-primary {
     background-color: yellowgreen;
 }
+
+.login {
+    width: 50%;
+    background-color: #777;
+    margin: 0 auto;
+    height : 100px;
+    border-radius: 3px;
+    border-width: 3px;
+    border-color: #000;
+}
+

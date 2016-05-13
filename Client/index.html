@@ -2,7 +2,7 @@
 <!-- Template by Quackit.com -->
 <!-- Images by various sources under the Creative Commons CC0 license and/or the Creative Commons Zero license.
 Although you can use them, for a more unique website, replace these images with your own. -->
-<html lang="en">
+<html lang="en" ng-app="heatingUp">
 
 <head>
 
@@ -10,16 +10,11 @@ Although you can use them, for a more unique website, replace these images with 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Business 2</title>
+    <title>Heating Up</title>
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/custom.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <script src="lib/angular/angular.js"></script>
-    <script src="assets/js/jquery-1.11.3.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.easing.min.js"></script>
-    <script src="assets/js/custom.js"></script>
-    <script src="lib/angular-ui-router/node_modules/angular/angular.min.js"></script>
+
 
 </head>
 
@@ -45,10 +40,10 @@ Although you can use them, for a more unique website, replace these images with 
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active">
-                        <a href="#">Home</a>
+                        <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="#">Login</a>
+                        <a href="#/login">Login</a>
                     </li>
                     <li>
                         <a href="#">About</a>
@@ -62,10 +57,16 @@ Although you can use them, for a more unique website, replace these images with 
     <!-- Header -->
     <header>
         <div class="header-content">
-        <div ui-view></div>
+        <div ng-view></div>
         </div>
     </header>
-
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-route/angular-route.min.js"></script>
+    <script src="assets/js/jquery-1.11.3.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="app/app.js"></script>
 </body>
 
 </html>

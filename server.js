@@ -1,10 +1,10 @@
 var express = require("express")
 var app = express()
 
-
+app.use(express.static(__dirname + "/Client"))
 
 app.get('/', function (req, res) {
-  res.render("./index.html")
+  console.log(__dirname)
 });
 
 app.listen(3000, function () {
