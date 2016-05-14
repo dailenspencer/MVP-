@@ -11,22 +11,21 @@
       <div class="col-md-4 promo-item item-2-fade">
         <h1>
           <div>
-            <input class="innerSubmit" ng-model="eh">
-            <button class="innerSubmitButton">Submit</button>
+            <select ng-model = "input" ng-change = "searchTeam(input)" class = "innerSubmit">
+              <option class ="innerSubmit" ng-repeat="teams in data">{{teams.teamName}}</option>
+            </select>
             <table class="statsTable">
               <tr class="statsTableTr">
-                <td>Player</td>
-                <td>MPG</td>
-                <td>PPG</td>
-                <td>FGM-FGA</td>
-                <td>FG%</td>
+                <td>Name</td>
+                <td>WINS</td>
+                <td>LOSSES</td>
+                <td>WIN%</td>
               </tr>
-              <tr>
-                 <td>Stephen Curry</td>
-                 <td>36.2</td>
-                 <td>Too Many</td>
-                 <td>6.6-14.3</td>
-                 <td>.462</td>
+              <tr class="statsTableTr" ng-repeat="stats in rendered">
+                 <td>{{stats.teamName}}</td>
+                 <td>{{stats.w}}</td>
+                 <td>{{stats.l}}</td>
+                 <td>{{stats.wPct}}</td>
               </tr>
             </table>
           </div>

@@ -6,21 +6,18 @@
           <div>
             <input class="innerSubmit" ng-model="input">
             <button class="innerSubmitButton" ng-click="getData(input)">Submit</button>
-            {{input}}
             <table class="statsTable">
               <tr class="statsTableTr">
                 <td>Player</td>
-                <td>MPG</td>
                 <td>PPG</td>
-                <td>FGM-FGA</td>
-                <td>FG%</td>
+                <td>RPG</td>
+                <td>APG</td>
               </tr>
-              <tr>
-                 <td>Stephen Curry</td>
-                 <td>36.2</td>
-                 <td>Too Many</td>
-                 <td>6.6-14.3</td>
-                 <td>.462</td>
+              <tr class="statsTableTr" ng-repeat="stats in data">
+                 <td>{{stats.player.playerName}}</td>
+                 <td>{{stats.player.pts}}</td>
+                 <td>{{stats.player.reb}}</td>
+                 <td>{{stats.player.ast}}</td>
               </tr>
             </table>
           </div>
