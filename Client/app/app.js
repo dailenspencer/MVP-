@@ -27,3 +27,16 @@ angular.module("heatingUp",
     	templateUrl: 'app/login/login.html'
     })
 })
+.factory('dataState', function(){
+  return {
+    teamData: null,
+    conferenceState: null,
+    teamState: [],
+    westernData: [],
+    westernDataState: "unFetched",
+    easternData:[],
+    easternDataState: "unFetched",
+    displayTeam: [],
+    playerData: []
+  }
+})

@@ -498,4 +498,12 @@ img::-moz-selection {
     border-color: white;
     font-size: 14px;
 }
+.statsTableTrX{
+    margin: 10px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: white;
+    font-size: 14px;
+    font-weight: bolder;
+}
 

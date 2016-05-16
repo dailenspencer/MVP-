@@ -20,12 +20,14 @@
                 <td>WINS</td>
                 <td>LOSSES</td>
                 <td>WIN%</td>
+                <td></td>
               </tr>
               <tr class="statsTableTr" ng-repeat="stats in rendered">
                  <td>{{stats.teamName}}</td>
                  <td>{{stats.w}}</td>
                  <td>{{stats.l}}</td>
                  <td>{{stats.wPct}}</td>
+                 <td class="statsTableTrX">X</td>
               </tr>
             </table>
           </div>
