@@ -4,3 +4,7 @@ $('#siteNav').affix({
 		top: 100
 	}
 })
+
+$(window).scroll(function(){
+    $(".header-fade").css("opacity", 0 + $(window).scrollTop() / 500);
+  });
