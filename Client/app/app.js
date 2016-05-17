@@ -1,31 +1,116 @@
 angular.module("heatingUp",
-  ['ngRoute',
+  ['ui.router',
   'heatingUp.byConf',
   'heatingUp.byTeam',
   'heatingUp.byPlayer'])
-.config(function($routeProvider){
-  $routeProvider
-    .when('/',{
-      templateUrl: 'app/login/login.html'
+.config(function($stateProvider, $urlRouterProvider){
+  $stateProvider
+    .state('onApp',{
+      url : "/",
+      views: {
+      'home': {
+        templateUrl: 'app/login/login.html'
+      },
+      'byTeam': {
+        templateUrl: 'app/byTeam/byTeam.html',
+        controller: 'byTeam'
+      },
+      'byConf': {
+        templateUrl: 'app/byConference/byConference.html',
+        controller: 'byConf'
+      },
+      'byPlayer': {
+        templateUrl: 'app/byPlayer/byPlayer.html',
+        controller: 'byPlayer'
+      }
+      }
     })
-    .when('#',{
-      templateUrl: 'app/login/login.html'
+    .state('byConf',{
+      url : "/byConference",
+      views: {
+      'home': {
+        templateUrl: 'app/login/login.html'
+      },
+      'byTeam': {
+        templateUrl: 'app/byTeam/byTeam.html',
+        controller: 'byTeam'
+      },
+      'byConf': {
+        templateUrl: 'app/byConference/byConference.html',
+        controller: 'byConf'
+      },
+      'byPlayer': {
+        templateUrl: 'app/byPlayer/byPlayer.html',
+        controller: 'byPlayer'
+      }
+      }
     })
-    .when('/byPlayer',{
-      templateUrl: 'app/byPlayer/byPlayer.html',
-      controller: 'byPlayer'
+    .state('byPlayer',{
+      url : "/byPlayer",
+      views: {
+      'home': {
+        templateUrl: 'app/login/login.html'
+      },
+      'byTeam': {
+        templateUrl: 'app/byTeam/byTeam.html',
+        controller: 'byTeam'
+      },
+      'byConf': {
+        templateUrl: 'app/byConference/byConference.html',
+        controller: 'byConf'
+      },
+      'byPlayer': {
+        templateUrl: 'app/byPlayer/byPlayer.html',
+        controller: 'byPlayer'
+      }
+      }
     })
-    .when('/byTeam',{
-    	templateUrl: 'app/byTeam/byTeam.html',
-      controller: 'byTeam'
+    .state('byTeam',{
+      url : "/byTeam",
+      views: {
+      'home': {
+        templateUrl: 'app/login/login.html'
+      },
+      'byTeam': {
+        templateUrl: 'app/byTeam/byTeam.html',
+        controller: 'byTeam'
+      },
+      'byConf': {
+        templateUrl: 'app/byConference/byConference.html',
+        controller: 'byConf'
+      },
+      'byPlayer': {
+        templateUrl: 'app/byPlayer/byPlayer.html',
+        controller: 'byPlayer'
+      }
+      }
     })
-    .when('/byConference',{
-    	templateUrl: 'app/byConference/byConference.html',
-      controller: 'byConf'
-    }).
-    otherwise({
-    	templateUrl: 'app/login/login.html'
-    })
+
+
+
+
+  // $routeProvider
+  //   .when('/',{
+  //     templateUrl: 'app/login/login.html'
+  //   })
+  //   .when('#',{
+  //     templateUrl: 'app/login/login.html'
+  //   })
+  //   .when('/byPlayer',{
+  //     templateUrl: 'app/byPlayer/byPlayer.html',
+  //     controller: 'byPlayer'
+  //   })
+  //   .when('/byTeam',{
+  //   	templateUrl: 'app/byTeam/byTeam.html',
+  //     controller: 'byTeam'
+  //   })
+  //   .when('/byConference',{
+  //   	templateUrl: 'app/byConference/byConference.html',
+  //     controller: 'byConf'
+  //   }).
+  //   otherwise({
+  //   	templateUrl: 'app/login/login.html'
+  //   })
 })
 .factory('dataState', function(){
   return {

@@ -35,17 +35,39 @@ Although you can use them, for a more unique website, replace these images with 
                     HEATING UP
                 </a>
             </div>
-            <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav navbar-right">
+
                     <li class="active">
-                        <a href="/">Home</a>
+                        <a class="Home" ui-sref="onApp" href="/">Home</a>
                     </li>
                     <li>
-                        <a href="#/login">Login</a>
+                      <a ng-controller = "byPlayer" ui-sref="byPlayer" href="#/byPlayer" class="SearchPlayer" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">By Player<span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="about-us">
+                            <li>
+                              <section class="webdesigntuts-workshop">
+                                <form ng-controller="byPlayer" ng-submit="getData(input)">
+                                  <input ng-model="input" type="search" placeholder="Search...">
+
+                                  <button>Search</button>
+                                </form>
+                              </section></li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="#">About</a>
+                      <a ng-controller = "byTeam" ui-sref="byTeam" href="#/byTeam" class="SearchTeam" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">By Team<span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="about-us">
+                            <li>
+                              <section class="webdesigntuts-workshop">
+                                <form ng-controller = "byTeam" ng-submit="searchTeam(input)" >
+                                  <input id="tags"ng-model="input"type="search" placeholder="Search...">
+                                  <button>Search</button>
+                                </form>
+                              </section></li>
+                        </ul>
+                    </li>
+                    <li>
+                      <a class="SearchConf" ui-sref="byConf" href="#/byConference">Search By Conference</a>
                     </li>
                 </ul>
 
@@ -55,23 +77,29 @@ Although you can use them, for a more unique website, replace these images with 
 
     <!-- Header -->
     <header class="header-kobe">
-        <div class="header-fade">
-          <div class="header-content">
-            <div ng-view></div>
-          </div>
-        </div>
+      <div class="kobe-header-fade">
+
+      </div>
     </header>
     <header class="header-lebron">
-        <div class="header-content">
-        <div ng-view></div>
-        </div>
+      <div ui-view="byTeam"></div>
+      <div class="lebron-header-fade"></div>
+    </header>
+    <header class="header-steph">
+      <div ui-view="byConf"></div>
+      <div class="steph-header-fade"></div>
+    </header>
+    <header class="header-kd">
+      <div ui-view="byPlayer"></div>
+      <div class="kd-header-fade"></div>
     </header>
     <script src="assets/js/jquery-1.11.3.min.js"></script>
+    <script src="assets/js/jquery-ui-1.11.4/jquery-ui.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.easing.min.js"></script>
     <script src="assets/js/custom.js"></script>
     <script src="lib/angular/angular.min.js"></script>
-    <script src="lib/angular-route/angular-route.min.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="app/byConference/byConference.js"></script>
     <script src="app/byPlayer/byPlayer.js"></script>
     <script src="app/byTeam/byTeam.js"></script>

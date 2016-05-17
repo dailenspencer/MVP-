@@ -2,13 +2,11 @@
 
 angular.module('heatingUp.byConf', [])
 .controller('byConf', function ($scope, $http, dataState) {
-  
-  $scope.input;
-  $scope.current;
 
   $scope.getData = function(){
+    console.log("calling getDats")
 
-    $http({ 
+    $http({
       method: 'GET',
       url: '/api/byConf'
     }).then(function successCallback(res){
@@ -28,7 +26,7 @@ angular.module('heatingUp.byConf', [])
            key === "Milwaukee Bucks" ||
            key === "New York Knicks" ||
            key === "Brooklyn Nets" ||
-           key === "Philadelphia 76ers" 
+           key === "Philadelphia 76ers"
            ){
           dataState.easternData.push(dataState.teamData[key])
         }
@@ -49,7 +47,7 @@ angular.module('heatingUp.byConf', [])
            key === "New Orleans Pelicans" ||
            key === "Minnesota Timberwolves" ||
            key === "Phoenix Suns" ||
-           key === "Los Angeles Lakers" 
+           key === "Los Angeles Lakers"
            ){
           dataState.westernData.push(dataState.teamData[key])
         }
@@ -60,31 +58,11 @@ angular.module('heatingUp.byConf', [])
     })
   }
 
-  $scope.chooseConf = function(value){
-    console.log($scope.current)
-    if(value == "Western"){
-
-      $scope.current = dataState.westernData
-      dataState.conferenceState = "Western"
-      console.log($scope.current)
-    }
-    if(value == "Eastern"){
-      console.log("in east")
-      $scope.current = dataState.easternData
-      dataState.conferenceState = "Eastern"
-    }
-  }
-
-  if(dataState.easternDataState === "unFetched"){
+  if(dataState.westernData.length === 0  && dataState.easternData.length === 0){
     $scope.getData()
   }
 
-  if(dataState.conferenceState === "Eastern"){
-    $scope.current = dataState.easternData
-  }
-
-  if(dataState.conferenceState === "Western"){
-    $scope.current = dataState.westernData
-  }
+  $scope.west = dataState.westernData
+  $scope.east = dataState.easternData
 
 });

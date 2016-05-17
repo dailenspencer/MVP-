@@ -1,45 +1,34 @@
-<div class="container-fluid">
-  <div class="row promo">
-    <a href="#/byPlayer">
-      <div class="col-md-4 promo-item item-1">
-        <h3>
-          Player
-        </h3>
-      </div>
-    </a>
-    <a href="#/byTeam">
-      <div class="col-md-4 promo-item item-2-fade">
-        <h1>
-          <div>
-            <select ng-model = "input" ng-change = "searchTeam(input)" class = "innerSubmit">
-              <option class ="innerSubmit" ng-repeat="teams in data">{{teams.teamName}}</option>
-            </select>
-            <table class="statsTable">
-              <tr class="statsTableTr">
-                <td>Name</td>
-                <td>WINS</td>
-                <td>LOSSES</td>
-                <td>WIN%</td>
-                <td></td>
-              </tr>
-              <tr class="statsTableTr" ng-repeat="stats in rendered">
-                 <td>{{stats.teamName}}</td>
-                 <td>{{stats.w}}</td>
-                 <td>{{stats.l}}</td>
-                 <td>{{stats.wPct}}</td>
-                 <td class="statsTableTrX">X</td>
-              </tr>
-            </table>
-          </div>
-        </h1>
-      </div>
-    </a>
-    <a href="#/byConference">
-      <div class="col-md-4 promo-item item-3">
-        <h3>
-          Conference
-        </h3>
-      </div>
-    </a>
-  </div>
+<div id="page-wrap" class="page-wrap-conf">
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>Team Name</th>
+        <th>Wins</th>
+        <th>Losses</th>
+        <th>Win%</th>
+      <th>PPG</th>
+      <th>APG</th>
+      <th>RPG</th>
+      <th>FG%</th>
+      <th>3GF%</th>
+      <th>FT%</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="team in data">
+      <td>{{team.teamName}}</td>
+      <td>{{team.w}}</td>
+      <td>{{team.l}}</td>
+      <td>{{team.wPct}}</td>
+      <td>{{team.pts}}</td>
+      <td>{{team.ast}}</td>
+      <td>{{team.dreb + team.oreb}}</td>
+      <td>{{team.fgPct}}</td>
+      <td>{{team.fg3Pct}}</td>
+      <td>{{team.ftPct}}</td>
+    </tr>
+    </tbody>
+  </table>
 </div>

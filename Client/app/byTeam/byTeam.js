@@ -2,7 +2,7 @@ angular.module('heatingUp.byTeam', [])
 .controller('byTeam', function ($scope, $http, dataState) {
 
 
-  
+
   $scope.getData = function(){
 
     $http({
@@ -18,6 +18,7 @@ angular.module('heatingUp.byTeam', [])
   }
 
   $scope.searchTeam = function(team){
+    console.log(team)
 
     for(var i = 0; i < dataState.teamState.length; i ++){
       if(dataState.teamState[i].teamName === team){
@@ -40,6 +41,7 @@ angular.module('heatingUp.byTeam', [])
   $scope.data = dataState.teamData
   $scope.rendered = dataState.teamState
   $scope.input
+  console.log(dataState.teamData)
 
   if(!dataState.teamData){
     $scope.getData()

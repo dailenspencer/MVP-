@@ -40,14 +40,72 @@ p {
     -o-background-size: cover;
 }
 
-.header-fade{
+.header-steph{
+    position: relative;
+    height: 100%;
+    min-height: auto;
+    text-align: center;
+    opacity: 1;
+    color: #fff;
+    background-image: url('../images/steph.png');
+    background-size: auto 600px;
+    background-color: #000;
+    background-position: top center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+.header-kd{
+    position: relative;
+    height: 100%;
+    min-height: auto;
+    text-align: center;
+    opacity: 1;
+    color: #fff;
+    background-image: url('../images/KD.jpg');
+    background-size: auto 600px;
+    background-color: #000;
+    background-position: top center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.kobe-header-fade{
     position: absolute;
     height: 100%;
     width:100%;
     z-index: 10px;
     opacity: 0;
     background-color: #000;
-
+}
+.lebron-header-fade{
+    position: absolute;
+    height: 100%;
+    width:100%;
+    z-index: 10px;
+    opacity: 1;
+    background-color: #000;
+}
+.steph-header-fade{
+    position: absolute;
+    height: 100%;
+    width:100%;
+    z-index: 10px;
+    opacity: 1;
+    background-color: #000;
+}
+.kd-header-fade{
+    position: absolute;
+    height: 100%;
+    width:100%;
+    z-index: 10px;
+    opacity: 1;
+    background-color: #000;
 }
 
 .header-lebron{
@@ -266,7 +324,7 @@ header .header-content .header-content-inner p {
 
 .navbar-default .nav > li>a,
 .navbar-default .nav>li>a:focus {
-    color: #222;
+    color: #fff;
 }
 
 .navbar-default .nav > li>a:hover,
@@ -286,7 +344,7 @@ header .header-content .header-content-inner p {
 }
 
 @media(min-width:768px) {
-    .navbar-default {
+    .navbar-default, .navbar-default.affix {
         border-color: rgba(255,255,255,.3);
         background-color: transparent;
     }
@@ -311,12 +369,6 @@ header .header-content .header-content-inner p {
         color: #fff;
     }
 
-    .navbar-default.affix {
-        border-color: #fff;
-        background-color: #fff;
-        box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.1);
-    }
-
     .navbar-default.affix .navbar-header .navbar-brand {
         letter-spacing: 0;
         color: yellowgreen;
@@ -329,7 +381,7 @@ header .header-content .header-content-inner p {
 
     .navbar-default.affix .nav > li>a,
     .navbar-default.affix .nav>li>a:focus {
-        color: #222;
+        color: #fff;
     }
 
     .navbar-default.affix .nav > li>a:hover,
@@ -493,47 +545,353 @@ img::-moz-selection {
     border-color: #000;
 }
 
-.innerSubmit {
-    background-color: black;
-    display: inline-block;
-    color: white;
-    font-size: 15px;
-    width : 170px;
-    height : 30px;
-    margin: 0px 3px
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font: 14px/1.4 Georgia, Serif;
+}
+#page-wrap {
+
+
+}
+.page-wrap-conf{
+
+    position: absolute;
+    margin: 50px auto;
+    height: 100%;
+    width:100%;
+    opacity: 1;
+    background: transparent;
+
 }
 
-.innerSubmitButton {
-    background-color: black;
-    display: inline-block;
-    color: white;
-    font-size: 10px;
-    width : 50px;
-    height : 30px;
+table {
+  background: transparent;
+  width: 100%;
+  border-collapse: collapse;
+  opacity: 1;
+  z-index: 100px
+
+}
+tr:nth-of-type(odd) {
+  background: #eee;
+  color:black;
+  opacity: 1;
+  z-index: 100px
+
+}
+th {
+  background: #333;
+  color: white;
+  font-weight: bold;
+  opacity: 1;
+  z-index: 100px
+}
+td, th {
+  padding: 2px;
+  border: 1px solid #ccc;
+  text-align: left;
+  opacity: 1;
+  z-index: 100px
 }
 
-.statsTable {
-    margin: 10px;
-    border-width: 3px;
-    border-style: solid;
-    width: 90%;
-    border-color: white;
-    font-size: 14px;
+*/
+  @media
+  only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px)  {
+
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+
+    tr { border: 1px solid #ccc; }
+
+    td {
+      /* Behave  like a "row" */
+      border: none;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      padding-left: 50%;
+    }
+
+    td:before {
+      /* Now like a table header */
+      position: absolute;
+      /* Top/left values mimic padding */
+      top: 6px;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+    }
+
+    /*
+    Label the data
+    */
+    td:nth-of-type(1):before { content: "First Name"; }
+    td:nth-of-type(2):before { content: "Last Name"; }
+    td:nth-of-type(3):before { content: "Job Title"; }
+    td:nth-of-type(4):before { content: "Favorite Color"; }
+    td:nth-of-type(5):before { content: "Wars of Trek?"; }
+    td:nth-of-type(6):before { content: "Porn Name"; }
+    td:nth-of-type(7):before { content: "Date of Birth"; }
+    td:nth-of-type(8):before { content: "Dream Vacation City"; }
+    td:nth-of-type(9):before { content: "GPA"; }
+    td:nth-of-type(10):before { content: "Arbitrary Data"; }
+  }
+
+  /* Smartphones (portrait and landscape) ----------- */
+  @media only screen
+  and (min-device-width : 320px)
+  and (max-device-width : 480px) {
+    body {
+      padding: 0;
+      margin: 0;
+      width: 320px; }
+    }
+
+  /* iPads (portrait and landscape) ----------- */
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    body {
+      width: 495px;
+    }
+  }
+
+#footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+   background:#999;
 }
-.statsTableTr{
-    margin: 10px;
-    border-width: 3px;
-    border-style: solid;
-    width: 90%;
-    border-color: white;
-    font-size: 14px;
+
+/* IE 6 */
+* html #footer {
+   position:absolute;
+   top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
 }
-.statsTableTrX{
-    margin: 10px;
-    border-width: 3px;
-    border-style: solid;
-    border-color: white;
-    font-size: 14px;
-    font-weight: bolder;
+
+@import url(http://fonts.googleapis.com/css?family=Cabin:400);
+
+.webdesigntuts-workshop:before {
+    background: #444;
+    background: -webkit-linear-gradient(left, #151515, #444, #151515);
+    background: -moz-linear-gradient(left, #151515, #444, #151515);
+    background: -o-linear-gradient(left, #151515, #444, #151515);
+    background: -ms-linear-gradient(left, #151515, #444, #151515);
+    background: linear-gradient(left, #151515, #444, #151515);
+    /*top: 192px;*/
 }
+
+.webdesigntuts-workshop:after {
+    background: #000;
+    background: -webkit-linear-gradient(left, #151515, #000, #151515);
+    background: -moz-linear-gradient(left, #151515, #000, #151515);
+    background: -o-linear-gradient(left, #151515, #000, #151515);
+    background: -ms-linear-gradient(left, #151515, #000, #151515);
+    background: linear-gradient(left, #151515, #000, #151515);
+    /*top: 191px;*/
+}
+
+.webdesigntuts-workshop form {
+    background: transparent;
+    background: -webkit-linear-gradient(#1b1b1b, #111);
+    background: -moz-linear-gradient(#1b1b1b, #111);
+    background: -o-linear-gradient(#1b1b1b, #111);
+    background: -ms-linear-gradient(#1b1b1b, #111);
+    background: linear-gradient(#1b1b1b, #111);
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: inset 0 0 0 1px #272727;
+    display: inline-block;
+    font-size: 0px;
+    /*margin: 150px auto 0;*/
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.webdesigntuts-workshop input {
+    background: #222;
+    background: -webkit-linear-gradient(#333, #222);
+    background: -moz-linear-gradient(#333, #222);
+    background: -o-linear-gradient(#333, #222);
+    background: -ms-linear-gradient(#333, #222);
+    background: linear-gradient(#333, #222);
+    border: 1px solid #444;
+    border-radius: 5px 0 0 5px;
+    box-shadow: 0 2px 0 #000;
+    color: #888;
+    display: block;
+    float: left;
+    font-family: 'Cabin', helvetica, arial, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    height: 40px;
+    margin: 0;
+    padding: 0 10px;
+    text-shadow: 0 -1px 0 #000;
+    width: 200px;
+}
+
+.ie .webdesigntuts-workshop input {
+    line-height: 40px;
+}
+
+.webdesigntuts-workshop input::-webkit-input-placeholder {
+   color: #888;
+}
+
+.webdesigntuts-workshop input:-moz-placeholder {
+   color: #888;
+}
+
+.webdesigntuts-workshop input:focus {
+    -webkit-animation: glow 800ms ease-out infinite alternate;
+    -moz-animation: glow 800ms ease-out infinite alternate;
+    -o-animation: glow 800ms ease-out infinite alternate;
+    -ms-animation: glow 800ms ease-out infinite alternate;
+    animation: glow 800ms ease-out infinite alternate;
+    background: #222922;
+    background: -webkit-linear-gradient(#333933, #222922);
+    background: -moz-linear-gradient(#333933, #222922);
+    background: -o-linear-gradient(#333933, #222922);
+    background: -ms-linear-gradient(#333933, #222922);
+    background: linear-gradient(#333933, #222922);
+    border-color: #393;
+    box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+    color: #efe;
+    outline: none;
+}
+
+.webdesigntuts-workshop input:focus::-webkit-input-placeholder {
+    color: #efe;
+}
+
+.webdesigntuts-workshop input:focus:-moz-placeholder {
+    color: #efe;
+}
+
+.webdesigntuts-workshop button {
+    background: #222;
+    background: -webkit-linear-gradient(#333, #222);
+    background: -moz-linear-gradient(#333, #222);
+    background: -o-linear-gradient(#333, #222);
+    background: -ms-linear-gradient(#333, #222);
+    background: linear-gradient(#333, #222);
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -o-box-sizing: content-box;
+    -ms-box-sizing: content-box;
+    box-sizing: content-box;
+    border: 1px solid #444;
+    border-left-color: #000;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 0 2px 0 #000;
+    color: #fff;
+    display: block;
+    float: left;
+    font-family: 'Cabin', helvetica, arial, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    height: 40px;
+    line-height: 40px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-shadow: 0 -1px 0 #000;
+    width: 80px;
+}
+
+.webdesigntuts-workshop button:hover,
+.webdesigntuts-workshop button:focus {
+    background: #292929;
+    background: -webkit-linear-gradient(#393939, #292929);
+    background: -moz-linear-gradient(#393939, #292929);
+    background: -o-linear-gradient(#393939, #292929);
+    background: -ms-linear-gradient(#393939, #292929);
+    background: linear-gradient(#393939, #292929);
+    color: #5f5;
+    outline: none;
+}
+
+.webdesigntuts-workshop button:active {
+    background: #292929;
+    background: -webkit-linear-gradient(#393939, #292929);
+    background: -moz-linear-gradient(#393939, #292929);
+    background: -o-linear-gradient(#393939, #292929);
+    background: -ms-linear-gradient(#393939, #292929);
+    background: linear-gradient(#393939, #292929);
+    box-shadow: 0 1px 0 #000, inset 1px 0 1px #222;
+    top: 1px;
+}
+
+@-webkit-keyframes glow {
+    0% {
+        border-color: #393;
+        box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+    }
+    100% {
+        border-color: #6f6;
+        box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
+    }
+}
+
+@-moz-keyframes glow {
+    0% {
+        border-color: #393;
+        box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+    }
+    100% {
+        border-color: #6f6;
+        box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
+    }
+}
+
+@-o-keyframes glow {
+    0% {
+        border-color: #393;
+        box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+    }
+    100% {
+        border-color: #6f6;
+        box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
+    }
+}
+
+@-ms-keyframes glow {
+    0% {
+        border-color: #393;
+        box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+    }
+    100% {
+        border-color: #6f6;
+        box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
+    }
+}
+
+@keyframes glow {
+    0% {
+        border-color: #393;
+        box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+    }
+    100% {
+        border-color: #6f6;
+        box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
+    }
+}
+
+
+
 
