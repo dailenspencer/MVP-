@@ -28,7 +28,11 @@ angular.module('heatingUp.byPlayer', [])
     })
   }
 
+
+
   $scope.data = dataState.playerData
   $scope.input
 
 });
+
+

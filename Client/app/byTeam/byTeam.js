@@ -17,6 +17,10 @@ angular.module('heatingUp.byTeam', [])
     })
   }
 
+  $scope.cons = function(){
+    console.log("uh-oh")
+  }
+
   $scope.searchTeam = function(team){
     console.log(team)
 

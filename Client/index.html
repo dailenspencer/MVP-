@@ -11,6 +11,7 @@ Although you can use them, for a more unique website, replace these images with 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Heating Up</title>
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/jquery-ui.min.css" rel="stylesheet">
     <link href="assets/css/custom.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -59,8 +60,8 @@ Although you can use them, for a more unique website, replace these images with 
                         <ul class="dropdown-menu" aria-labelledby="about-us">
                             <li>
                               <section class="webdesigntuts-workshop">
-                                <form ng-controller = "byTeam" ng-submit="searchTeam(input)" >
-                                  <input id="tags"ng-model="input"type="search" placeholder="Search...">
+                                <form ng-controller ="byTeam" ng-submit="searchTeam(input)" >
+                                  <input id="tags" ng-model="input" ng-change ="cons()"type="search" placeholder="Search...">
                                   <button>Search</button>
                                 </form>
                               </section></li>

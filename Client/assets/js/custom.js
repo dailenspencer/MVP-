@@ -52,34 +52,44 @@ $(".SearchPlayer").click(function() {
     2000);
 });
 
-$(function() {
-    var availableTags = [
-      "ActionScript",
-      "AppleScript",
-      "Asp",
-      "BASIC",
-      "C",
-      "C++",
-      "Clojure",
-      "COBOL",
-      "ColdFusion",
-      "Erlang",
-      "Fortran",
-      "Groovy",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Lisp",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme"
-    ];
+
     $( "#tags" ).autocomplete({
-      source: availableTags
-    });
+    source: [
+      "Cleveland Cavaliers",
+      "Toronto Raptors",
+      "Miami Heat",
+      "Atlanta Hawks",
+      "Boston Celtics",
+      "Charlotte Hornets",
+      "Indiana Pacers",
+      "Chicago Bulls",
+      "Detroit Pistons",
+      "Washington Wizards",
+      "Orlando Magic",
+      "Milwaukee Bucks",
+      "New York Knicks",
+      "Brooklyn Nets",
+      "Philadelphia 76ers",
+      "Golden State Warriors",
+      "San Antonio Spurs",
+      "Oklahoma City Thunder",
+      "Los Angeles Clippers",
+      "Portland Trail Blazers",
+      "Dallas Mavericks",
+      "Memphis Grizzlies",
+      "Houston Rockets",
+      "Utah Jazz",
+      "Sacramento Kings",
+      "Denver Nuggets",
+      "New Orleans Pelicans",
+      "Minnesota Timberwolves",
+      "Phoenix Suns",
+      "Los Angeles Lakers"
+    ],
+    select: function( event, ui ) {
+      $("#tags").text(ui)
+      console.log("eh")
+    }
   });
 
 
