@@ -2,6 +2,8 @@ var nba = require("nba")
 var request = require("request")
 var express = require("express")
 var bodyParser = require("body-parser")
+const MongoClient = require('mongodb').MongoClient
+
 var app = express()
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -31,6 +33,7 @@ app.get('/api/byConf', function(req, res){
 app.post('/api/byPlayer', function(req, res){
   if(playersObj[req.body.playerName]){
     nba.stats.playerInfo({playerId: playersObj[req.body.playerName].playerId}, function(err, data, param){
+      
       res.send(data)
     })
   }else{
@@ -50,6 +53,29 @@ function initialize(){
   })
 }
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
-});
+MongoClient.connect('mongodb://admin:admin@ds023932.mlab.com:23932/nbadb', function(err, database){
+  
+  if (err){
+    return console.log(err)
+  }
+  console.log("database initialized") 
+  db = database;
+
+  app.listen(3000,function(){
+    console.log(db.collections('players'))
+    console.log('listening on 3000')
+  })
+  
+})
+
+
+var dataMethods = {
+  getPlayerData : function(db){
+    db.players.insert(nba.players)
+    console.log("player data fetched")
+  }
+} 
+
+var querydb = function(db){
+  console.log(db)
+}

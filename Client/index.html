@@ -6,105 +6,101 @@ Although you can use them, for a more unique website, replace these images with 
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Heating Up</title>
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/jquery-ui.min.css" rel="stylesheet">
-    <link href="assets/css/custom.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
+ <title>Heating Up</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/jquery-ui.min.css" rel="stylesheet">
+  <link href="assets/css/custom.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
 </head>
 
 <body>
-
-    <!-- Navigation -->
-    <nav id="siteNav" class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Logo and responsive toggle -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">
-                    <span class="glyphicon glyphicon-fire"></span>
-                    HEATING UP
-                </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-                <ul class="nav navbar-nav navbar-right">
-
-                    <li class="active">
-                        <a class="Home" ui-sref="onApp" href="/">Home</a>
-                    </li>
-                    <li>
-                      <a ng-controller = "byPlayer" ui-sref="byPlayer" href="#/byPlayer" class="SearchPlayer" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">By Player<span class="caret"></span></a>
-                        <ul class="dropdown-menu" aria-labelledby="about-us">
-                            <li>
-                              <section class="webdesigntuts-workshop">
-                                <form ng-controller="byPlayer" ng-submit="getData(input)">
-                                  <input ng-model="input" type="search" placeholder="Search...">
-
-                                  <button>Search</button>
-                                </form>
-                              </section></li>
-                        </ul>
-                    </li>
-                    <li>
-                      <a ng-controller = "byTeam" ui-sref="byTeam" href="#/byTeam" class="SearchTeam" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">By Team<span class="caret"></span></a>
-                        <ul class="dropdown-menu" aria-labelledby="about-us">
-                            <li>
-                              <section class="webdesigntuts-workshop">
-                                <form ng-controller ="byTeam" ng-submit="searchTeam(input)" >
-                                  <input id="tags" ng-model="input" ng-change ="cons()"type="search" placeholder="Search...">
-                                  <button>Search</button>
-                                </form>
-                              </section></li>
-                        </ul>
-                    </li>
-                    <li>
-                      <a class="SearchConf" ui-sref="byConf" href="#/byConference">Search By Conference</a>
-                    </li>
-                </ul>
-
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container -->
-    </nav>
-
-    <!-- Header -->
-    <header class="header-kobe">
-      <div class="kobe-header-fade">
-
+   <!-- Navigation -->
+  <nav id="siteNav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+    <!-- Logo and responsive toggle -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+          <span class="glyphicon glyphicon-fire"></span>
+          HEATING UP
+        </a>
       </div>
-    </header>
-    <header class="header-lebron">
-      <div ui-view="byTeam"></div>
-      <div class="lebron-header-fade"></div>
-    </header>
-    <header class="header-steph">
-      <div ui-view="byConf"></div>
-      <div class="steph-header-fade"></div>
-    </header>
-    <header class="header-kd">
-      <div ui-view="byPlayer"></div>
-      <div class="kd-header-fade"></div>
-    </header>
-    <script src="assets/js/jquery-1.11.3.min.js"></script>
-    <script src="assets/js/jquery-ui-1.11.4/jquery-ui.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.easing.min.js"></script>
-    <script src="assets/js/custom.js"></script>
-    <script src="lib/angular/angular.min.js"></script>
-    <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="app/byConference/byConference.js"></script>
-    <script src="app/byPlayer/byPlayer.js"></script>
-    <script src="app/byTeam/byTeam.js"></script>
-    <script src="app/app.js"></script>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active">
+            <a class="Home" ui-sref="onApp" href="/">Home</a>
+          </li>
+          <li>
+            <a ng-controller = "byPlayer" ui-sref="byPlayer" href="#/byPlayer" class="SearchPlayer" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">By Player<span class="caret"></span></a>
+            <ul class="dropdown-menu" aria-labelledby="about-us">
+              <li>
+                <section class="webdesigntuts-workshop">
+                  <form ng-controller="byPlayer" ng-submit="getData(input)">
+                    <input ng-model="input" type="search" placeholder="Search...">
+                    <button>Search</button>
+                  </form>
+                </section>
+              </li>
+            </ul>
+            </li>
+            <li>
+              <a ng-controller = "byTeam" ui-sref="byTeam" href="#/byTeam" class="SearchTeam" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">By Team<span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="about-us">
+                <li>
+                  <section class="webdesigntuts-workshop">
+                    <form ng-controller ="byTeam" ng-submit="searchTeam(input)" >
+                      <input id="tags" ng-model="input" ng-change ="cons()"type="search" placeholder="Search...">
+                      <button>Search</button>
+                    </form>
+                  </section>
+                </li>
+              </ul>
+              </li>
+              <li>
+                <a class="SearchConf" ui-sref="byConf" href="#/byConference">Search By Conference</a>
+              </li>
+            </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+  </nav>
+    <!-- Header -->
+  <header class="header-kobe">
+    <div class="kobe-header-fade">
+      <div ui-view="home"></div>
+    </div>
+  </header>
+  <header class="header-lebron">
+    <div ui-view="byTeam"></div>
+    <div class="lebron-header-fade"></div>
+  </header>
+  <header class="header-steph">
+    <div ui-view="byConf"></div>
+    <div class="steph-header-fade"></div>
+  </header>
+  <header class="header-kd">
+    <div ui-view="byPlayer"></div>
+    <div class="kd-header-fade"></div>
+  </header>
+  <script src="assets/js/jquery-1.11.3.min.js"></script>
+  <script src="assets/js/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/jquery.easing.min.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="app/byConference/byConference.js"></script>
+  <script src="app/byPlayer/byPlayer.js"></script>
+  <script src="app/byTeam/byTeam.js"></script>
+  <script src="app/app.js"></script>
 </body>
 
 </html>
